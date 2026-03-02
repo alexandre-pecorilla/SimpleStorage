@@ -1,0 +1,5 @@
+# Remix local state and workspace data
+.states/
+
+# Compiler output and build artifacts
+artifacts/
