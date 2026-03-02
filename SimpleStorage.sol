@@ -21,6 +21,11 @@ contract SimpleStorage { // Create the smart contract and name it - Similar to d
     // a static array => Person[3] public listOfPeople;
 
 
+    // create a mapping (dictionary)
+    // that way we can find a person favorite number using their name
+    // if a key doesnt exist, it returns the default value for the type (for uint256, it's 0)
+    mapping(string => uint256) public nameToFavoriteNumber;
+
     function store(uint256 _myFavoriteNumber) public {
         myFavoriteNumber = _myFavoriteNumber;
     }
@@ -35,6 +40,8 @@ contract SimpleStorage { // Create the smart contract and name it - Similar to d
     }
 
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
-        listOfPeople.push(Person(_favoriteNumber, _name));
+        listOfPeople.push(Person(_favoriteNumber, _name)); // add a person to the array
+        nameToFavoriteNumber[_name] = _favoriteNumber; // update the mapping 
+
     }
 } 
