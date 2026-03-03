@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT 
-pragma solidity 0.8.18; // stating the version of solidity we will use
+pragma solidity ^0.8.18; // stating the version of solidity we will use
 
 contract SimpleStorage { // Create the smart contract and name it - Similar to declaring a class in object oriented programming
     uint256 myFavoriteNumber; // If public isn't specified, it defaults to internal
@@ -39,6 +39,7 @@ contract SimpleStorage { // Create the smart contract and name it - Similar to d
         return myFavoriteNumber;
     }
 
+    // Add a person and their favorite number to the list of people and to the mapping
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         listOfPeople.push(Person(_favoriteNumber, _name)); // add a person to the array
         nameToFavoriteNumber[_name] = _favoriteNumber; // update the mapping 
