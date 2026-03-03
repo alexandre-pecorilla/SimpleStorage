@@ -26,7 +26,7 @@ contract SimpleStorage { // Create the smart contract and name it - Similar to d
     // if a key doesnt exist, it returns the default value for the type (for uint256, it's 0)
     mapping(string => uint256) public nameToFavoriteNumber;
 
-    function store(uint256 _myFavoriteNumber) public {
+    function store(uint256 _myFavoriteNumber) public virtual { // the virtual keyword is needed to make the function overridable by child contracts (AddFiveStorage)
         myFavoriteNumber = _myFavoriteNumber;
     }
 
